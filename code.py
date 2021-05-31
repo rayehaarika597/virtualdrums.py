@@ -51,7 +51,7 @@ while True:
 
     contours, hierachy = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
-    # startpoint, endpoint, color, thickness
+    
     for cnt in contours:
         (x, y, w, h) = cv2.boundingRect(cnt)
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
@@ -96,10 +96,10 @@ while True:
             break
         break
 
-    # for the blue Object
+   
     contours, hierachy = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     contours = sorted(contours, key=lambda x: cv2.contourArea(x), reverse=True)
-    # startpoint, endpoint, color, thickness
+  
     for cnt in contours:
         (x, y, w, h) = cv2.boundingRect(cnt)
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
