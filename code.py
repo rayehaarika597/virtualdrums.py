@@ -3,6 +3,8 @@ import numpy as np
 import pyautogui
 import imutils
 
+pyautogui.FAILSAFE = False
+
 def Press(key):
     pyautogui.press(key)
 
